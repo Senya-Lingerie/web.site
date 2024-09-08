@@ -8,7 +8,11 @@
 }
 /*Estilos para el fondo del logo*/
 .main_container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("https://i.postimg.cc/DzQKcHxM/logo.jpg");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color:#D9A8A1;
 }
 /*Estilos para el contenedor de la navegacion*/
 .container {
@@ -42,7 +46,9 @@
 }
 /*Estilos para la lista de la navegacion*/
 .nav_list {
-  background-color: #a1a1a1;
+  background-image: url("https://i.postimg.cc/HkspPZ1v/Whats-App-Image-2024-09-07-at-16-45-22.jpg");
+  background-position: top;
+  background-size: contain;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -135,9 +141,9 @@ main {
   margin: 0 auto;
   /* width: 100%; */
   overflow: hidden;
-  background-image: url("https://i.postimg.cc/sfmcMm6Y/bg-munkyweb2-EDIT.png");
+  background-image: url("https://images.pexels.com/photos/9269207/pexels-photo-9269207.jpeg?auto=compress&cs=tinysrgb&w=600");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   grid-template-rows: max-content 1fr;
   grid-template-areas:
