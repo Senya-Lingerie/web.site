@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Splash&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+/*Estilos para el fondo del logo*/
+.main_container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+}
+/*Estilos para el contenedor de la navegacion*/
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+/*Navegacion con sus propiedades custom*/
+.nav {
+  --state-close: scale(0);
+  --state-menu: scale(1);
+  --state-bg: translate(-100%);
+
+  padding: 40px 0;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: repeat(2, max-content);
+}
+/*Efectos para los botones menu y close*/
+.nav:target {
+  --state-bg: translate(0);
+  --state-close: scale(1);
+  --state-menu: scale(0);
+}
+/*Estilos para el logo*/
+.nav_logo {
+  font-size: 2.5rem;
+  z-index: 1;
+}
+/*Estilos para la lista de la navegacion*/
+.nav_list {
+  background-color: #a1a1a1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+
+  display: grid;
+  align-content: center;
+  gap: 2em;
+  padding-left: 5%;
+
+  transform: var(--state-bg);
+  transition: 0.3s transform;
+}
+/*Botones para el menu movile*/
+.nav_menu,
+.nav_close {
+  cursor: pointer;
+  grid-column: -2/-1;
+  grid-row: 1/2;
+  transition: 0.4s transform;
+}
+.nav_menu {
+  transform: var(--state-menu);
+}
+.nav_close {
+  transform: var(--state-close);
+}
+.nav_icon {
+  width: 40px;
+}
+/*Estilos para los items de la nav*/
+.nav_item {
+  list-style: none;
+}
+.nav_link {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+/*Media para el modo responsive*/
+
+@media (min-width: 768px) {
+  .nav {
+    --state-menu: scale(0);
+    --state-bg: translate(0);
+  }
+  /*Efectos para los botones menu y close*/
+  .nav:target {
+    --state-close: scale(0);
+  }
+  /*Efectos para la navegacion en modo Desktop*/
+  .nav_list {
+    background-color: unset;
+    position: unset;
+    padding: 0;
+    gap: 1.5em;
+    transform: unset;
+    grid-auto-flow: column;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+  }
+  .nav_link {
+    font-size: 1rem;
+    letter-spacing: none;
+  }
+}
+@media (max-width: 800px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    text-align: center;
+  }
+  .img_container {
+    grid-row: 1/2;
+  }
+  .img_main {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+  }
+}
+/*Contenido pricipal Main y footer*/
+main {
+  display: grid;
+  min-height: 500px;
+  height: 100vh;
+  margin: 0 auto;
+  /* width: 100%; */
+  overflow: hidden;
+  background-image: url("https://i.postimg.cc/sfmcMm6Y/bg-munkyweb2-EDIT.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas:
+    "content"
+    "footer";
+}
+/*Estilos para el content parte de texto*/
+.content {
+  grid-area: content;
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 180px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.393);
+}
+.main_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/*Estilos para el titulo, subtitulo y info*/
+.main_title {
+  font-size: 100px;
+  font-weight: 400;
+  font-family: "Splash", cursive;
+}
+.main_subtitle {
+  font-size: 30px;
+  font-weight: 400;
+}
+.main_text {
+  font-size: 20px;
+  font-weight: 300;
+}
+/*Estilos para la imagen principal*/
+.img_container img {
+  width: 500px;
+  /* opacity: .9;
+    mix-blend-mode: multiply; */
+  filter: grayscale(100%);
+}
+footer {
+  background-color: black;
+  text-align: center;
+  padding: 1rem;
+}
+footer span{
+  color: aliceblue;
+  font-size: 10px;
+}
